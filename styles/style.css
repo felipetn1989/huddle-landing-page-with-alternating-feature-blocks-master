@@ -245,7 +245,7 @@ section > div.heading {
 }
 
 .ready .start {
-  font-size: .6875rem;
+  font-size: 0.6875rem;
 }
 
 .ready__question {
@@ -336,16 +336,19 @@ ion-icon:hover {
   color: hsl(228, 45%, 44%);
 }
 
+/* Media query for desktops */
+
 @media screen and (min-width: 60em) {
   header,
   .top,
-  main,
   footer {
-    padding: 2rem;
+    padding: 0.75rem 2rem;
   }
 
   header {
     background-image: url(../images/bg-hero-desktop.svg);
+    padding-bottom: 0;
+    margin-bottom: 9rem;
   }
 
   #logo {
@@ -360,9 +363,10 @@ ion-icon:hover {
   }
 
   .header__info {
-    flex-direction: row;
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
     text-align: left;
+    margin-top: 0.875rem;
   }
 
   .header__text {
@@ -377,30 +381,43 @@ ion-icon:hover {
   }
 
   .header__text > p {
-    font-size: 1.0625rem;
+    font-size: 1.1875rem;
   }
 
   .start {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-radius: 2rem;
+    width: 17rem;
+    margin-top: unset;
   }
 
-  #mockup {
-    min-width: 500px;
+  .card {
+    padding: 0 5.5rem;
+
   }
 
-  section.grow,
-  section.conversations,
-  section.users {
+  .grow,
+  .conversations,
+  .users {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.25fr 1fr;
     gap: 10rem;
     text-align: left;
+    padding: 3rem 6rem;
+  }
+  
+  .users {
+    padding: 5.25rem 6rem;
   }
 
   .heading h2 {
+    font-size: 1.75rem;
     margin-top: 0;
+  }
+
+  .heading p {
+    font-size: 1.125rem;
   }
 
   section > img {
@@ -420,14 +437,28 @@ ion-icon:hover {
     grid-template-areas: "one two";
   }
 
-  .card > .ready {
-    transform: translateY(6em);
+  .ready {
+    transform: translateY(7.5rem);
     width: 50rem;
     margin: auto;
+    padding: 3.675rem 0;
+  }
+
+  .ready h2 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .ready .start {
+    font-size: 1.125rem;
+    width: 25rem;
+    padding: 1.5rem 0;
+    border-radius: 3rem;
   }
 
   footer {
-    padding-top: 8rem;
+    padding: 12rem 8rem 0 8rem;
+
   }
 
   .footer__logo {
@@ -436,6 +467,7 @@ ion-icon:hover {
 
   ul {
     columns: 2;
+    column-gap: 4rem;
   }
 
   li {
@@ -453,6 +485,14 @@ ion-icon:hover {
   .grid_group > * {
     padding: 0;
     margin: 0;
+  }
+
+  .page_links {
+    place-self: start end;
+  }
+
+  .social_icons {
+    transform: translateX(2rem);
   }
 
   address {
